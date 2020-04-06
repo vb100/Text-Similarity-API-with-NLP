@@ -26,7 +26,7 @@ def verifyPw(username, password):
     if not UserExist(username):
         return False
 
-    hashed_pw = user.find({
+    hashed_pw = users.find({
         'Username' : username
     })[0]['Password']
     
@@ -174,7 +174,7 @@ class Refill(Resource):
 
         retJson = {
             'status' : '200',
-            'msg' : 'Refilled tokens succ   essfully.'
+            'msg' : 'Refilled tokens successfully.'
         }
 
         return jsonify(retJson)
